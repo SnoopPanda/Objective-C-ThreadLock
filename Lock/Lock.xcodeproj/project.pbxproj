@@ -19,6 +19,12 @@
 		A08A1AFE1FD94C0100F295FE /* SPNSLockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1AFD1FD94C0100F295FE /* SPNSLockOperation.m */; };
 		A08A1B011FD9553500F295FE /* SPSynchronizedOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B001FD9553500F295FE /* SPSynchronizedOperation.m */; };
 		A08A1B041FD957E500F295FE /* SPDispatchSemaphoreOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B031FD957E500F295FE /* SPDispatchSemaphoreOperation.m */; };
+		A08A1B071FDA2D6100F295FE /* SPAtomicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B061FDA2D6100F295FE /* SPAtomicOperation.m */; };
+		A08A1B0A1FDA331E00F295FE /* SPConditionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B091FDA331E00F295FE /* SPConditionOperation.m */; };
+		A08A1B0D1FDA34E300F295FE /* SPConditionLockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B0C1FDA34E300F295FE /* SPConditionLockOperation.m */; };
+		A08A1B101FDA359100F295FE /* SPRecursiveLockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B0F1FDA359100F295FE /* SPRecursiveLockOperation.m */; };
+		A08A1B131FDA36C300F295FE /* SPPOSIXOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B121FDA36C300F295FE /* SPPOSIXOperation.m */; };
+		A08A1B161FDA386700F295FE /* SPOSSpinLockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A1B151FDA386700F295FE /* SPOSSpinLockOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,18 @@
 		A08A1B001FD9553500F295FE /* SPSynchronizedOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPSynchronizedOperation.m; sourceTree = "<group>"; };
 		A08A1B021FD957E500F295FE /* SPDispatchSemaphoreOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPDispatchSemaphoreOperation.h; sourceTree = "<group>"; };
 		A08A1B031FD957E500F295FE /* SPDispatchSemaphoreOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPDispatchSemaphoreOperation.m; sourceTree = "<group>"; };
+		A08A1B051FDA2D6100F295FE /* SPAtomicOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAtomicOperation.h; sourceTree = "<group>"; };
+		A08A1B061FDA2D6100F295FE /* SPAtomicOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAtomicOperation.m; sourceTree = "<group>"; };
+		A08A1B081FDA331E00F295FE /* SPConditionOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConditionOperation.h; sourceTree = "<group>"; };
+		A08A1B091FDA331E00F295FE /* SPConditionOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConditionOperation.m; sourceTree = "<group>"; };
+		A08A1B0B1FDA34E300F295FE /* SPConditionLockOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPConditionLockOperation.h; sourceTree = "<group>"; };
+		A08A1B0C1FDA34E300F295FE /* SPConditionLockOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPConditionLockOperation.m; sourceTree = "<group>"; };
+		A08A1B0E1FDA359100F295FE /* SPRecursiveLockOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPRecursiveLockOperation.h; sourceTree = "<group>"; };
+		A08A1B0F1FDA359100F295FE /* SPRecursiveLockOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPRecursiveLockOperation.m; sourceTree = "<group>"; };
+		A08A1B111FDA36C300F295FE /* SPPOSIXOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPPOSIXOperation.h; sourceTree = "<group>"; };
+		A08A1B121FDA36C300F295FE /* SPPOSIXOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPPOSIXOperation.m; sourceTree = "<group>"; };
+		A08A1B141FDA386700F295FE /* SPOSSpinLockOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPOSSpinLockOperation.h; sourceTree = "<group>"; };
+		A08A1B151FDA386700F295FE /* SPOSSpinLockOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPOSSpinLockOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,12 +168,24 @@
 			children = (
 				A08A1AF91FD9463E00F295FE /* SPBaseOperation.h */,
 				A08A1AFA1FD9463E00F295FE /* SPBaseOperation.m */,
+				A08A1B051FDA2D6100F295FE /* SPAtomicOperation.h */,
+				A08A1B061FDA2D6100F295FE /* SPAtomicOperation.m */,
 				A08A1AFC1FD94C0100F295FE /* SPNSLockOperation.h */,
 				A08A1AFD1FD94C0100F295FE /* SPNSLockOperation.m */,
 				A08A1AFF1FD9553500F295FE /* SPSynchronizedOperation.h */,
 				A08A1B001FD9553500F295FE /* SPSynchronizedOperation.m */,
 				A08A1B021FD957E500F295FE /* SPDispatchSemaphoreOperation.h */,
 				A08A1B031FD957E500F295FE /* SPDispatchSemaphoreOperation.m */,
+				A08A1B081FDA331E00F295FE /* SPConditionOperation.h */,
+				A08A1B091FDA331E00F295FE /* SPConditionOperation.m */,
+				A08A1B0B1FDA34E300F295FE /* SPConditionLockOperation.h */,
+				A08A1B0C1FDA34E300F295FE /* SPConditionLockOperation.m */,
+				A08A1B0E1FDA359100F295FE /* SPRecursiveLockOperation.h */,
+				A08A1B0F1FDA359100F295FE /* SPRecursiveLockOperation.m */,
+				A08A1B111FDA36C300F295FE /* SPPOSIXOperation.h */,
+				A08A1B121FDA36C300F295FE /* SPPOSIXOperation.m */,
+				A08A1B141FDA386700F295FE /* SPOSSpinLockOperation.h */,
+				A08A1B151FDA386700F295FE /* SPOSSpinLockOperation.m */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -294,13 +324,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08A1B131FDA36C300F295FE /* SPPOSIXOperation.m in Sources */,
+				A08A1B161FDA386700F295FE /* SPOSSpinLockOperation.m in Sources */,
 				A08A1AFB1FD9463E00F295FE /* SPBaseOperation.m in Sources */,
 				A08A1B041FD957E500F295FE /* SPDispatchSemaphoreOperation.m in Sources */,
 				A08A1ACB1FD944F000F295FE /* ViewController.m in Sources */,
+				A08A1B0D1FDA34E300F295FE /* SPConditionLockOperation.m in Sources */,
 				A08A1AD61FD944F000F295FE /* main.m in Sources */,
+				A08A1B0A1FDA331E00F295FE /* SPConditionOperation.m in Sources */,
 				A08A1AC81FD944EF00F295FE /* AppDelegate.m in Sources */,
+				A08A1B071FDA2D6100F295FE /* SPAtomicOperation.m in Sources */,
 				A08A1B011FD9553500F295FE /* SPSynchronizedOperation.m in Sources */,
 				A08A1AFE1FD94C0100F295FE /* SPNSLockOperation.m in Sources */,
+				A08A1B101FDA359100F295FE /* SPRecursiveLockOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Lock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snooppanda.Lock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,6 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Lock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snooppanda.Lock;
 				PRODUCT_NAME = "$(TARGET_NAME)";

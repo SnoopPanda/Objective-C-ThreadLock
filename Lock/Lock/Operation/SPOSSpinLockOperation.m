@@ -1,38 +1,38 @@
 //
-//  SPDispatchSemaphoreOperation.m
+//  SPOSSpinLockOperation.m
 //  Lock
 //
-//  Created by WangJie on 2017/12/7.
+//  Created by WangJie on 2017/12/8.
 //  Copyright © 2017年 WangJie. All rights reserved.
 //
 
-#import "SPDispatchSemaphoreOperation.h"
+#import "SPOSSpinLockOperation.h"
+#import <libkern/OSAtomic.h>
 
-@implementation SPDispatchSemaphoreOperation {
-    dispatch_semaphore_t semaphore;
+@implementation SPOSSpinLockOperation {
+    OSSpinLock spinLock;
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        semaphore = dispatch_semaphore_create(1);
+        spinLock = OS_SPINLOCK_INIT;
     }
     return self;
 }
 
 - (void)fetchImageName {
-    
     NSString *imageName;
     while (1) {
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        OSSpinLockLock(&spinLock);
         if (imgNameArray.count > 0) {
             imageName = imgNameArray.firstObject;
             [imgNameArray removeObjectAtIndex:0];
-            dispatch_semaphore_signal(semaphore);
+            OSSpinLockUnlock(&spinLock);
         }else {
             now = CFAbsoluteTimeGetCurrent();
             printf("%s_lock -> %f sec\n", [NSStringFromClass([self class]) UTF8String], now-then);
-            dispatch_semaphore_signal(semaphore);
+            OSSpinLockUnlock(&spinLock);
             return;
         }
     }
