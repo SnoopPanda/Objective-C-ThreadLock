@@ -35,6 +35,7 @@
             pthread_mutex_unlock(&mutex);
         } else {
             now = CFAbsoluteTimeGetCurrent();
+            [resultArray addObject:[NSNumber numberWithDouble:now-then]];
             printf("%s_lock -> %f sec\n", [NSStringFromClass([self class]) UTF8String], now-then);
             pthread_mutex_unlock(&mutex);
             return;

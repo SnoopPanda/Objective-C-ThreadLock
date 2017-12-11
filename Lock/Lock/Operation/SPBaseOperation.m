@@ -15,6 +15,7 @@
     if (self) {
         _syncQueue = dispatch_queue_create("com.snooppanda.lock", DISPATCH_QUEUE_CONCURRENT);
         imgNameArray = [NSMutableArray new];
+        resultArray = [NSMutableArray new];
         int count = 1024*8;
         for (int i=0;i<count;i++) {
             [imgNameArray addObject:[NSString stringWithFormat:@"image - %d", count]];
@@ -45,9 +46,12 @@
     for (int i=0; i<5; i++) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self fetchImageName];
+            if (resultArray.count == 5) {
+                float avg = [[resultArray valueForKeyPath:@"@avg.floatValue"] floatValue];
+                printf("avg -> %f\n", avg);
+            }
         });
     }
-    
 }
 
 @end

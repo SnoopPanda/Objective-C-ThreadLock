@@ -12,6 +12,7 @@
 {
     NSMutableArray *imgNameArray;
     __block double then, now;
+    NSMutableArray *resultArray;
 }
 
 @property (nonatomic, readonly) dispatch_queue_t syncQueue;

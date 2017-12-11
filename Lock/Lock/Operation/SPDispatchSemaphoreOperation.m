@@ -31,6 +31,7 @@
             dispatch_semaphore_signal(semaphore);
         }else {
             now = CFAbsoluteTimeGetCurrent();
+            [resultArray addObject:[NSNumber numberWithDouble:now-then]];
             printf("%s_lock -> %f sec\n", [NSStringFromClass([self class]) UTF8String], now-then);
             dispatch_semaphore_signal(semaphore);
             return;
